@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page Title</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      function game() {
+        playRound(computerSelection);
+        playRound(computerSelection);
+        playRound(computerSelection);
+        playRound(computerSelection);
+        playRound(computerSelection);
+      }
+      function playRound(computerSelection) {
+        let choice = prompt("What's your choice?").toLowerCase();
+
+        if (choice === computerSelection) {
+          console.log("It's a tie");
+        }
+        if (choice === "rock" && computerSelection === "paper") {
+          console.log("You Lost!");
+        }
+        if (choice === "rock" && computerSelection === "scissors") {
+          console.log("You Won!");
+        }
+        if (choice === "paper" && computerSelection === "scissors") {
+          console.log("You Lost!");
+        }
+        if (choice === "paper" && computerSelection === "rock") {
+          console.log("You Won!");
+        }
+        if (choice === "scissors" && computerSelection === "rock") {
+          console.log("You Lost!");
+        }
+        if (choice === "scissors" && computerSelection === "paper") {
+          console.log("You Won!");
+        }
+      }
+      function computerPlay() {
+        const choices = ["rock", "paper", "scissors"];
+        return choices[Math.floor(choices.length * Math.random())];
+      }
+      const computerSelection = computerPlay();
+      console.log(game(playRound));
+    </script>
+  </body>
+</html>
